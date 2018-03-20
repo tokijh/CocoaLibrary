@@ -1,0 +1,6 @@
+framework module RxSwiftDo {
+  umbrella header "RxSwiftDo-umbrella.h"
+
+  export *
+  module * { export * }
+}
