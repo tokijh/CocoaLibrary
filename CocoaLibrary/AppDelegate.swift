@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     lazy var rootViewController: UIViewController = {
-        let viewController = UIViewController()
+        let viewModel = GithubRepositoriesViewModel()
+        let viewController = GithubListViewController.create(with: viewModel)
         return viewController
     }()
     
