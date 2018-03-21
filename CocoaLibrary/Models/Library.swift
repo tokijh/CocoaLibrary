@@ -8,8 +8,15 @@
 
 class Library {
     var name: String
+    var property: Property
     
-    init(name: String) {
+    init(name: String, property: Property) {
         self.name = name
+        self.property = property
+    }
+    
+    enum Property {
+        case cocoaPods
+        case github
     }
 }

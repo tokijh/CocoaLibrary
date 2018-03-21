@@ -46,11 +46,26 @@ class LibraryListViewModelController: UIViewController, BaseViewType {
     }
     
     func bindEvent() {
-        self.rx.viewWillAppear.bind(to: viewModel.viewWillAppear).disposed(by: disposeBag)
+        self.rx.viewWillAppear
+            .bind(to: viewModel.viewWillAppear)
+            .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(LibrarySectionData.Item.self)
+            .bind(to: viewModel.didCellSelected)
+            .disposed(by: disposeBag)
     }
     
     func bindView() {
-        self.viewModel.libraries.drive(tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        self.viewModel.libraries
+            .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        self.viewModel.pushVC
+            .drive(onNext: { [weak self] in
+                guard let vc = $0 else { return }
+                self?.navigationController?.pushViewController(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     lazy var dataSource: RxTableViewSectionedReloadDataSource<LibrarySectionData> = {

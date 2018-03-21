@@ -16,11 +16,12 @@ class LibraryListViewModel: BaseViewModel {
     
     // Event
     let viewWillAppear = PublishSubject<Void>()
-    let didCellSelected = PublishSubject<Repository>()
+    let didCellSelected = PublishSubject<Library>()
     
     // UI
     let isLoading: Driver<Bool>
     let libraries: Driver<[LibrarySectionData]>
+    let pushVC: Driver<UIViewController?>
     
     init(libraryService: LibraryService = LibraryService()) {
         
@@ -33,5 +34,12 @@ class LibraryListViewModel: BaseViewModel {
             .flatMapLatest { libraryService.load() }
             .map { [LibrarySectionData(model: "", items: $0)] }
             .asDriver(onErrorJustReturn: [])
+        
+        self.pushVC = didCellSelected.map {
+            switch $0.property {
+            case .cocoaPods: return CocoaPodsListViewController.create(with: CocoaPodsListViewModel())
+            case .github: return GithubListViewController.create(with: GithubListViewModel())
+            }
+        }.asDriver(onErrorJustReturn: nil)
     }
 }

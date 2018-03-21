@@ -11,8 +11,8 @@ import RxSwift
 class LibraryService {
     func load() -> Observable<[Library]> {
         return Observable.of([
-            Library(name: "CocoaPods"),
-            Library(name: "Github"),
+            Library(name: "CocoaPods", property: .cocoaPods),
+            Library(name: "Github", property: .github),
         ])
     }
 }
