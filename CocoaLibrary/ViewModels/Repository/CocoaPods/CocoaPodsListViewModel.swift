@@ -1,5 +1,5 @@
 //
-//  GithubRepositoriesViewModel.swift
+//  CocoaPodsListViewModel.swift
 //  CocoaLibrary
 //
 //  Created by tokijh on 2018. 3. 20..
@@ -9,9 +9,9 @@
 import RxSwift
 import RxCocoa
 
-class GithubRepositoriesViewModel: RepositoriesViewModelType {
+class CocoaPodsListViewModel: RepositoriesViewModelType {
     
-    init(githubService: GithubServiceType = GithubService()) {
+    init(cocoaPodsService: CocoaPodsServiceType = CocoaPodsService()) {
         
     }
 }

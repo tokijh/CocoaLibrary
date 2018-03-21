@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-typealias RepositoriesData = SectionModel<String, Repository>
+//typealias RepositoriesData = SectionModel<String, Repository>
 
 protocol RepositoriesViewModelType: BaseViewModel {
     // TODO Add Event and UI like next
