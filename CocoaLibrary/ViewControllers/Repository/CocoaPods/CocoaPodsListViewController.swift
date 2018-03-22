@@ -7,11 +7,23 @@
 //
 
 import UIKit
+import RxSwift
 
-class CocoaPodsListViewController: RepositoriesListViewController {
+class CocoaPodsListViewController: UIViewController, BaseViewType {
     
-    override func initView() {
-        super.initView()
+    var viewModel: CocoaPodsListViewModel!
+    var disposeBag: DisposeBag!
+    
+    
+    func initView() {
         self.title = "CocoaPods"
+    }
+    
+    func bindEvent() {
+        
+    }
+    
+    func bindView() {
+        
     }
 }

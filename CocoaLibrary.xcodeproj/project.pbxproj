@@ -12,7 +12,6 @@
 		5C49632B2060FD380059AC94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4963292060FD380059AC94 /* LaunchScreen.storyboard */; };
 		5C4963352060FFC90059AC94 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4963342060FFC90059AC94 /* BaseViewModel.swift */; };
 		5C496337206100140059AC94 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C496336206100140059AC94 /* BaseViewController.swift */; };
-		5C4963392061025D0059AC94 /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4963382061025D0059AC94 /* RepositoriesListViewController.swift */; };
 		5C49633B206103070059AC94 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C49633A206103070059AC94 /* RepositoriesViewModel.swift */; };
 		5C49633E206103550059AC94 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C49633D206103550059AC94 /* Repository.swift */; };
 		5C496340206103B90059AC94 /* GithubListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C49633F206103B90059AC94 /* GithubListViewModel.swift */; };
@@ -26,9 +25,15 @@
 		5C5F4A9320610D3F004B245C /* LibraryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4A9220610D3F004B245C /* LibraryListViewModel.swift */; };
 		5C5F4A952061108E004B245C /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4A942061108E004B245C /* Library.swift */; };
 		5C5F4A97206110C5004B245C /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4A96206110C5004B245C /* LibraryService.swift */; };
-		5C5F4A9C20611461004B245C /* Reactive+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4A9B20611461004B245C /* Reactive+Base.swift */; };
+		5C5F4A9C20611461004B245C /* Rx+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4A9B20611461004B245C /* Rx+Base.swift */; };
 		5C5F4A9F2061EDD9004B245C /* LibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4A9E2061EDD9004B245C /* LibraryTableViewCell.swift */; };
 		5C5F4AA12061EFDC004B245C /* UITableViewCell+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AA02061EFDC004B245C /* UITableViewCell+Base.swift */; };
+		5C5F4AA32062022F004B245C /* GithubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AA22062022F004B245C /* GithubTableViewCell.swift */; };
+		5C5F4AA5206205F6004B245C /* Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AA4206205F6004B245C /* Github.swift */; };
+		5C5F4AA7206206C9004B245C /* Rx+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AA6206206C9004B245C /* Rx+ObjectMapper.swift */; };
+		5C5F4AA920620A9A004B245C /* Rx+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AA820620A9A004B245C /* Rx+Request.swift */; };
+		5C5F4AAB20620F74004B245C /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AAA20620F74004B245C /* Pod.swift */; };
+		5C5F4AAF20623B76004B245C /* GithubSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AAE20623B76004B245C /* GithubSearch.swift */; };
 		70CAE166E3D25B86E8BADD89 /* Pods_CocoaLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C9112A60FDFF0441F7F75A /* Pods_CocoaLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +48,6 @@
 		5C49632C2060FD380059AC94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4963342060FFC90059AC94 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5C496336206100140059AC94 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		5C4963382061025D0059AC94 /* RepositoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewController.swift; sourceTree = "<group>"; };
 		5C49633A206103070059AC94 /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
 		5C49633D206103550059AC94 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5C49633F206103B90059AC94 /* GithubListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubListViewModel.swift; sourceTree = "<group>"; };
@@ -57,9 +61,15 @@
 		5C5F4A9220610D3F004B245C /* LibraryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryListViewModel.swift; sourceTree = "<group>"; };
 		5C5F4A942061108E004B245C /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		5C5F4A96206110C5004B245C /* LibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
-		5C5F4A9B20611461004B245C /* Reactive+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Base.swift"; sourceTree = "<group>"; };
+		5C5F4A9B20611461004B245C /* Rx+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Base.swift"; sourceTree = "<group>"; };
 		5C5F4A9E2061EDD9004B245C /* LibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewCell.swift; sourceTree = "<group>"; };
 		5C5F4AA02061EFDC004B245C /* UITableViewCell+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Base.swift"; sourceTree = "<group>"; };
+		5C5F4AA22062022F004B245C /* GithubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTableViewCell.swift; sourceTree = "<group>"; };
+		5C5F4AA4206205F6004B245C /* Github.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github.swift; sourceTree = "<group>"; };
+		5C5F4AA6206206C9004B245C /* Rx+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+ObjectMapper.swift"; sourceTree = "<group>"; };
+		5C5F4AA820620A9A004B245C /* Rx+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Request.swift"; sourceTree = "<group>"; };
+		5C5F4AAA20620F74004B245C /* Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
+		5C5F4AAE20623B76004B245C /* GithubSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +144,9 @@
 			children = (
 				5C5F4A942061108E004B245C /* Library.swift */,
 				5C49633D206103550059AC94 /* Repository.swift */,
+				5C5F4AAE20623B76004B245C /* GithubSearch.swift */,
+				5C5F4AA4206205F6004B245C /* Github.swift */,
+				5C5F4AAA20620F74004B245C /* Pod.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,7 +181,6 @@
 		5C4963482061087D0059AC94 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				5C4963382061025D0059AC94 /* RepositoriesListViewController.swift */,
 				5C49635420610AA40059AC94 /* CocoaPods */,
 				5C49634B206108B70059AC94 /* Github */,
 			);
@@ -244,8 +256,10 @@
 		5C5F4A9A20611450004B245C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				5C5F4A9B20611461004B245C /* Reactive+Base.swift */,
+				5C5F4A9B20611461004B245C /* Rx+Base.swift */,
 				5C5F4AA02061EFDC004B245C /* UITableViewCell+Base.swift */,
+				5C5F4AA6206206C9004B245C /* Rx+ObjectMapper.swift */,
+				5C5F4AA820620A9A004B245C /* Rx+Request.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -254,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				5C5F4A9E2061EDD9004B245C /* LibraryTableViewCell.swift */,
+				5C5F4AA22062022F004B245C /* GithubTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -421,24 +436,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4963392061025D0059AC94 /* RepositoriesListViewController.swift in Sources */,
 				5C5F4A97206110C5004B245C /* LibraryService.swift in Sources */,
 				5C4963212060FD380059AC94 /* AppDelegate.swift in Sources */,
 				5C4963432061057E0059AC94 /* GithubService.swift in Sources */,
 				5C496340206103B90059AC94 /* GithubListViewModel.swift in Sources */,
-				5C5F4A9C20611461004B245C /* Reactive+Base.swift in Sources */,
+				5C5F4A9C20611461004B245C /* Rx+Base.swift in Sources */,
+				5C5F4AA5206205F6004B245C /* Github.swift in Sources */,
 				5C49635620610B1B0059AC94 /* CocoaPodsListViewController.swift in Sources */,
 				5C496350206109C70059AC94 /* CocoaPodsService.swift in Sources */,
 				5C5F4AA12061EFDC004B245C /* UITableViewCell+Base.swift in Sources */,
 				5C5F4A9320610D3F004B245C /* LibraryListViewModel.swift in Sources */,
 				5C4963352060FFC90059AC94 /* BaseViewModel.swift in Sources */,
+				5C5F4AA7206206C9004B245C /* Rx+ObjectMapper.swift in Sources */,
 				5C5F4A9F2061EDD9004B245C /* LibraryTableViewCell.swift in Sources */,
 				5C49634A206108940059AC94 /* GithubListViewController.swift in Sources */,
 				5C4963452061059F0059AC94 /* RepositoryService.swift in Sources */,
 				5C49633B206103070059AC94 /* RepositoriesViewModel.swift in Sources */,
+				5C5F4AA920620A9A004B245C /* Rx+Request.swift in Sources */,
+				5C5F4AAB20620F74004B245C /* Pod.swift in Sources */,
 				5C5F4A9120610CF5004B245C /* LibraryListViewController.swift in Sources */,
 				5C496337206100140059AC94 /* BaseViewController.swift in Sources */,
+				5C5F4AAF20623B76004B245C /* GithubSearch.swift in Sources */,
 				5C5F4A952061108E004B245C /* Library.swift in Sources */,
+				5C5F4AA32062022F004B245C /* GithubTableViewCell.swift in Sources */,
 				5C49635320610A070059AC94 /* CocoaPodsListViewModel.swift in Sources */,
 				5C49633E206103550059AC94 /* Repository.swift in Sources */,
 			);

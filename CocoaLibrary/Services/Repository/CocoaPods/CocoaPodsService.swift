@@ -6,12 +6,14 @@
 //  Copyright © 2018년 tokijh. All rights reserved.
 //
 
+import RxSwift
+
 protocol CocoaPodsServiceType: RepositoryService {
-    func search(_ text: String)
+    func search(_ text: String) -> Observable<Result<[Pod]>>
 }
 
 class CocoaPodsService: CocoaPodsServiceType {
-    func search(_ text: String) {
-        // TODO add search logic
+    func search(_ text: String) -> Observable<Result<[Pod]>> {
+        return Observable.just(Result<[Pod]>.fail(nil))
     }
 }

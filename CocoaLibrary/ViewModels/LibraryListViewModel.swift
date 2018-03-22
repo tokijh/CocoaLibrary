@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import RxSwiftDo
 import RxDataSources
 
 typealias LibrarySectionData = SectionModel<String, Library>
@@ -33,12 +34,13 @@ class LibraryListViewModel: BaseViewModel {
             .do(onNext: { _ in onLoading.onNext(true) })
             .flatMapLatest { libraryService.load() }
             .map { [LibrarySectionData(model: "", items: $0)] }
+            .do(on: { if !$0.isSubscribe, !$0.isSubscribed, !$0.isCompleted {  onLoading.onNext(false) } })
             .asDriver(onErrorJustReturn: [])
         
         self.pushVC = didCellSelected.map {
             switch $0.property {
             case .cocoaPods: return CocoaPodsListViewController.create(with: CocoaPodsListViewModel())
-            case .github: return GithubListViewController.create(with: GithubListViewModel())
+            case .github: return GithubListViewController.create(with: GithubListViewModel(githubServiceOption: GithubServiceOption(language: .all, sort: .stars)))
             }
         }.asDriver(onErrorJustReturn: nil)
     }
