@@ -70,11 +70,12 @@ class GithubListViewModel: BaseViewModel {
                         currentRepositoryOption.topic = text
                         return currentRepositoryOption
                 }
-                ])
+            ])
             .map { option -> GithubServiceRepositoryOption in
                 var new = option
                 new.topic = currentRepositoryOption.topic
                 currentRepositoryOption = new
+                // Init Paging
                 currentRepositoryOption.page = 1
                 hasNextPage = true
                 return currentRepositoryOption
@@ -107,7 +108,7 @@ class GithubListViewModel: BaseViewModel {
         let eventSearch = searching
             .flatMapLatest { searchRepositories($0) }
         
-        let eventAppend = self.loadNextPageTrigger
+        let eventLoadMoreRepositories = self.loadNextPageTrigger
             .debounce(0.5, scheduler: MainScheduler.instance)
             .flatMap { void -> Observable<Void> in
                 if hasNextPage { return Observable.just(void) }
@@ -119,7 +120,7 @@ class GithubListViewModel: BaseViewModel {
             }
             .flatMapLatest { searchRepositories($0) }
         
-        eventAppend
+        eventLoadMoreRepositories
             .subscribe(onNext: {
                 if $0.count == 0 { hasNextPage = false }
                 githubs.accept(githubs.value + $0)
@@ -139,8 +140,8 @@ class GithubListViewModel: BaseViewModel {
         self.showRepository = didTapCell.map({ URL(string: $0.html_url) }).asDriver(onErrorJustReturn: nil)
         
         self.editSearchRepositoryOption = Observable.merge([
-            didTapRightTabButton,
-            didTapOptionButton
+                didTapRightTabButton,
+                didTapOptionButton
             ])
             .map { _ in
                 GithubSearchRepositoryOptionViewModel(option: currentRepositoryOption) {

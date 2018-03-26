@@ -52,6 +52,7 @@ class GithubTableViewCell: UITableViewCell {
     }
     
     func initView() {
+        self.selectionStyle = .none
         addSubViews()
         constraint()
     }
