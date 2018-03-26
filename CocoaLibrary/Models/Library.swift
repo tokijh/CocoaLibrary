@@ -18,5 +18,6 @@ class Library {
     enum Property {
         case cocoaPods
         case github
+        case github2
     }
 }

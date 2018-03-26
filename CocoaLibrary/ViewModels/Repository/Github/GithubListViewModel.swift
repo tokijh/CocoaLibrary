@@ -26,7 +26,7 @@ class GithubListViewModel: BaseViewModel {
     let repositories: Driver<[GithubData]>
     let editSearchRepositoryOption: Driver<GithubSearchRepositoryOptionViewModel>
     
-    init(githubService: GithubServiceType = GithubService(), searchingRepositoryOption: GithubServiceRepositoryOption = GithubServiceRepositoryOption.init(topic: "", language: .all, sort: .best)) {
+    init(githubService: GithubServiceType = GithubService(), searchingRepositoryOption: GithubServiceRepositoryOption = GithubServiceRepositoryOption.init(topic: "", language: .all, sort: .best, page: 0)) {
         var searchingRepositoryOption = searchingRepositoryOption
         
         let onNetworking = PublishSubject<Bool>()
@@ -100,10 +100,9 @@ class GithubListViewModel: BaseViewModel {
         self.editSearchRepositoryOption = didTapRightBarButtonItem
             .map { _ in
                 GithubSearchRepositoryOptionViewModel(option: searchingRepositoryOption) {
-//                    searchingRepositoryOption = $0
                     eventRepositoryOption.onNext($0)
                 }
             }
-            .asDriver(onErrorJustReturn: GithubSearchRepositoryOptionViewModel(option: GithubServiceRepositoryOption(topic: "", language: .all, sort: .best)))
+            .asDriver(onErrorJustReturn: GithubSearchRepositoryOptionViewModel(option: GithubServiceRepositoryOption(topic: "", language: .all, sort: .best, page: 0)))
     }
 }

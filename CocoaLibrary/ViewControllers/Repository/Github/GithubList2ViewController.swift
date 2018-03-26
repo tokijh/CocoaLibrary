@@ -1,8 +1,8 @@
 //
-//  GithubListViewController.swift
+//  GithubList2ViewController.swift
 //  CocoaLibrary
 //
-//  Created by tokijh on 2018. 3. 20..
+//  Created by tokijh on 2018. 3. 26..
 //  Copyright © 2018년 tokijh. All rights reserved.
 //
 
@@ -13,9 +13,9 @@ import RxDataSources
 import SnapKit
 import SafariServices
 
-class GithubListViewController: UIViewController, BaseViewType {
+class GithubList2ViewController: UIViewController, BaseViewType {
     
-    var viewModel: GithubList2ViewModel!
+    var viewModel: GithubList3ViewModel!
     var disposeBag: DisposeBag!
     
     lazy var searchController: UISearchController = { [unowned self] in
@@ -27,7 +27,7 @@ class GithubListViewController: UIViewController, BaseViewType {
         searchController.searchBar.showsBookmarkButton = true
         searchController.searchBar.setImage(#imageLiteral(resourceName: "img_setting"), for: .bookmark, state: .normal)
         return searchController
-    }()
+        }()
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(GithubTableViewCell.self, forCellReuseIdentifier: GithubTableViewCell.Identifier)
@@ -48,7 +48,7 @@ class GithubListViewController: UIViewController, BaseViewType {
             indicator.center = center
         }
         return indicator
-    }()
+        }()
     
     func initView() {
         self.title = "Github"
@@ -77,24 +77,13 @@ class GithubListViewController: UIViewController, BaseViewType {
     }
     
     func bindEvent() {
-        self.searchController.searchBar.rx.text.orEmpty.bind(to: viewModel.changeSearchingText).disposed(by: disposeBag)
+        self.searchController.searchBar.rx.text.orEmpty.bind(to: viewModel.searchingText).disposed(by: disposeBag)
         self.rightBarButtonItem.rx.tap.bind(to: viewModel.didTapRightTabButton).disposed(by: disposeBag)
         self.searchController.searchBar.rx.bookmarkButtonClicked.bind(to: viewModel.didTapOptionButton).disposed(by: disposeBag)
         self.searchController.searchBar.rx.searchButtonClicked.bind(to: viewModel.didTapSearchButton).disposed(by: disposeBag)
         self.searchController.searchBar.rx.cancelButtonClicked.bind(to: viewModel.didTapCancelButton).disposed(by: disposeBag)
         self.tableView.rx.modelSelected(Github.self).bind(to: viewModel.didTapCell).disposed(by: disposeBag)
-        self.tableView.rx.contentOffset
-            .flatMap { [weak self] offset -> Observable<Bool> in
-                guard let tableView = self?.tableView,
-                    offset.y + tableView.frame.size.height - 20 > tableView.contentSize.height
-                    else { return Observable.empty() }
-                return Observable.just(true)
-            }
-            .debounce(1, scheduler: MainScheduler.instance)
-            .flatMap { [weak self] _ -> Observable<Bool> in
-                guard self?.tableView.visibleCells.count ?? 0 > 0 else { return Observable.empty() }
-                return Observable.just(true)
-            }
+        self.tableView.rx.reachedBottom
             .bind(to: viewModel.loadNextPageTrigger)
             .disposed(by: disposeBag)
     }
@@ -137,7 +126,7 @@ class GithubListViewController: UIViewController, BaseViewType {
         
         self.viewModel.editSearchRepositoryOption
             .drive(onNext: { [weak self] in
-                self?.navigationController?.pushViewController(GithubSearchRepositoryOptionViewController.create(with: $0), animated: true) 
+                self?.navigationController?.pushViewController(GithubSearchRepositoryOptionViewController.create(with: $0), animated: true)
             })
             .disposed(by: disposeBag)
     }

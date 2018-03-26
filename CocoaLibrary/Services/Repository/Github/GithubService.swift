@@ -17,6 +17,7 @@ struct GithubServiceRepositoryOption {
     var topic: String
     var language: Language
     var sort: Sort
+    var page: Int
 
     enum Language: String {
         case all = "", swift, objc
@@ -54,7 +55,8 @@ class GithubService: GithubServiceType {
         let topic = "topic:\(option.topic)"
         let language = option.language != .all ? " language:\(option.language.rawValue)" : ""
         let sort = option.sort != .best ? "&sort=\(option.sort)" : ""
-        let url = (baseUrl + topic + language + sort).replacingOccurrences(of: " ", with: "%20")
+        let page = "&page=\(option.page)"
+        let url = (baseUrl + topic + language + sort + page).replacingOccurrences(of: " ", with: "%20")
         print(url)
         return json(.get, url)
             .mapObject(type: GithubSearch.self)

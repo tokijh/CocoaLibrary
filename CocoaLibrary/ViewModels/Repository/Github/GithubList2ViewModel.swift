@@ -19,6 +19,7 @@ class GithubList2ViewModel: BaseViewModel {
     let didTapSearchButton = PublishSubject<Void>()
     let changeSearchingText = PublishSubject<String>()
     let didTapCell = PublishSubject<Github>()
+    let loadNextPageTrigger = PublishSubject<Bool>()
     
     // UI
     let isNetworking: Driver<Bool>
@@ -27,7 +28,7 @@ class GithubList2ViewModel: BaseViewModel {
     let showRepository: Driver<URL?>
     let editSearchRepositoryOption: Driver<GithubSearchRepositoryOptionViewModel>
     
-    init(githubService: GithubServiceType = GithubService(), repositoryOption: GithubServiceRepositoryOption = GithubServiceRepositoryOption(topic: "", language: .all, sort: .best)) {
+    init(githubService: GithubServiceType = GithubService(), repositoryOption: GithubServiceRepositoryOption = GithubServiceRepositoryOption(topic: "", language: .all, sort: .best, page: 0)) {
         var currentRepositoryOption = repositoryOption
         
         let onNetworking = PublishSubject<Bool>()
@@ -88,12 +89,14 @@ class GithubList2ViewModel: BaseViewModel {
             }
             .do { if !$0.isSubscribe, !$0.isSubscribed, !$0.isCompleted { print($0); onNetworking.onNext(false) } }
         
-        self.repositories = Observable<[Github]>
+        let searchedRepositories = Observable<[Github]>
             .merge([
                 eventSearch,
                 eventCancelSearch
-            ])
+                ])
             .map { [GithubData(model: "", items: $0)] }
+        
+        self.repositories = searchedRepositories
             .asDriver(onErrorJustReturn: [])
         
         self.showRepository = didTapCell.map({ URL(string: $0.html_url) }).asDriver(onErrorJustReturn: nil)
@@ -107,6 +110,6 @@ class GithubList2ViewModel: BaseViewModel {
                     eventRepositoryOption.onNext($0)
                 }
             }
-            .asDriver(onErrorJustReturn: GithubSearchRepositoryOptionViewModel(option: GithubServiceRepositoryOption(topic: "", language: .all, sort: .best)))
+            .asDriver(onErrorJustReturn: GithubSearchRepositoryOptionViewModel(option: GithubServiceRepositoryOption(topic: "", language: .all, sort: .best, page: 0)))
     }
 }

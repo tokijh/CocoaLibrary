@@ -13,6 +13,7 @@ class LibraryService {
         return Observable.of([
             Library(name: "CocoaPods", property: .cocoaPods),
             Library(name: "Github", property: .github),
+            Library(name: "Github2", property: .github2),
         ])
     }
 }

@@ -41,6 +41,7 @@ class LibraryListViewModel: BaseViewModel {
             switch $0.property {
             case .cocoaPods: return CocoaPodsListViewController.create(with: CocoaPodsListViewModel())
             case .github: return GithubListViewController.create(with: GithubList2ViewModel())
+            case .github2: return GithubList2ViewController.create(with: GithubList3ViewModel())
             }
         }.asDriver(onErrorJustReturn: nil)
     }
