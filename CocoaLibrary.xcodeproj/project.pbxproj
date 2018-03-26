@@ -34,6 +34,14 @@
 		5C5F4AA920620A9A004B245C /* Rx+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AA820620A9A004B245C /* Rx+Request.swift */; };
 		5C5F4AAB20620F74004B245C /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AAA20620F74004B245C /* Pod.swift */; };
 		5C5F4AAF20623B76004B245C /* GithubSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AAE20623B76004B245C /* GithubSearch.swift */; };
+		5C5F4AB720638A8B004B245C /* PodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AB620638A8B004B245C /* PodTableViewCell.swift */; };
+		5C5F4AB92063A8FC004B245C /* PodSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4AB82063A8FC004B245C /* PodSource.swift */; };
+		5C5F4ABB2063AA98004B245C /* PodSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F4ABA2063AA98004B245C /* PodSearch.swift */; };
+		601C324A2065E98B0083C790 /* GithubSearchRepositoryOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601C32492065E98A0083C790 /* GithubSearchRepositoryOptionViewModel.swift */; };
+		601C324C2065E9920083C790 /* GithubSearchRepositoryOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601C324B2065E9920083C790 /* GithubSearchRepositoryOptionViewController.swift */; };
+		601C32522066410C0083C790 /* GithubRepositorySearchOptionSectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601C32512066410C0083C790 /* GithubRepositorySearchOptionSectionData.swift */; };
+		601C3254206645C90083C790 /* StringPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601C3253206645C90083C790 /* StringPickerTableViewCell.swift */; };
+		601C3258206786CD0083C790 /* GithubList2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601C3257206786CD0083C790 /* GithubList2ViewModel.swift */; };
 		70CAE166E3D25B86E8BADD89 /* Pods_CocoaLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C9112A60FDFF0441F7F75A /* Pods_CocoaLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +78,14 @@
 		5C5F4AA820620A9A004B245C /* Rx+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Request.swift"; sourceTree = "<group>"; };
 		5C5F4AAA20620F74004B245C /* Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
 		5C5F4AAE20623B76004B245C /* GithubSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearch.swift; sourceTree = "<group>"; };
+		5C5F4AB620638A8B004B245C /* PodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodTableViewCell.swift; sourceTree = "<group>"; };
+		5C5F4AB82063A8FC004B245C /* PodSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodSource.swift; sourceTree = "<group>"; };
+		5C5F4ABA2063AA98004B245C /* PodSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodSearch.swift; sourceTree = "<group>"; };
+		601C32492065E98A0083C790 /* GithubSearchRepositoryOptionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchRepositoryOptionViewModel.swift; sourceTree = "<group>"; };
+		601C324B2065E9920083C790 /* GithubSearchRepositoryOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchRepositoryOptionViewController.swift; sourceTree = "<group>"; };
+		601C32512066410C0083C790 /* GithubRepositorySearchOptionSectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositorySearchOptionSectionData.swift; sourceTree = "<group>"; };
+		601C3253206645C90083C790 /* StringPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringPickerTableViewCell.swift; sourceTree = "<group>"; };
+		601C3257206786CD0083C790 /* GithubList2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubList2ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +162,9 @@
 				5C49633D206103550059AC94 /* Repository.swift */,
 				5C5F4AAE20623B76004B245C /* GithubSearch.swift */,
 				5C5F4AA4206205F6004B245C /* Github.swift */,
+				5C5F4ABA2063AA98004B245C /* PodSearch.swift */,
 				5C5F4AAA20620F74004B245C /* Pod.swift */,
+				5C5F4AB82063A8FC004B245C /* PodSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				5C496349206108940059AC94 /* GithubListViewController.swift */,
+				601C324B2065E9920083C790 /* GithubSearchRepositoryOptionViewController.swift */,
 			);
 			path = Github;
 			sourceTree = "<group>";
@@ -209,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				5C49633F206103B90059AC94 /* GithubListViewModel.swift */,
+				601C3257206786CD0083C790 /* GithubList2ViewModel.swift */,
+				601C32492065E98A0083C790 /* GithubSearchRepositoryOptionViewModel.swift */,
 			);
 			path = Github;
 			sourceTree = "<group>";
@@ -249,6 +270,7 @@
 		5C5F4A9920611137004B245C /* SectionDatas */ = {
 			isa = PBXGroup;
 			children = (
+				601C32512066410C0083C790 /* GithubRepositorySearchOptionSectionData.swift */,
 			);
 			path = SectionDatas;
 			sourceTree = "<group>";
@@ -268,7 +290,9 @@
 			isa = PBXGroup;
 			children = (
 				5C5F4A9E2061EDD9004B245C /* LibraryTableViewCell.swift */,
+				5C5F4AB620638A8B004B245C /* PodTableViewCell.swift */,
 				5C5F4AA22062022F004B245C /* GithubTableViewCell.swift */,
+				601C3253206645C90083C790 /* StringPickerTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -410,6 +434,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwiftDo/RxSwiftDo.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -423,6 +448,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftDo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -439,28 +465,36 @@
 				5C5F4A97206110C5004B245C /* LibraryService.swift in Sources */,
 				5C4963212060FD380059AC94 /* AppDelegate.swift in Sources */,
 				5C4963432061057E0059AC94 /* GithubService.swift in Sources */,
+				5C5F4AB720638A8B004B245C /* PodTableViewCell.swift in Sources */,
 				5C496340206103B90059AC94 /* GithubListViewModel.swift in Sources */,
 				5C5F4A9C20611461004B245C /* Rx+Base.swift in Sources */,
 				5C5F4AA5206205F6004B245C /* Github.swift in Sources */,
 				5C49635620610B1B0059AC94 /* CocoaPodsListViewController.swift in Sources */,
 				5C496350206109C70059AC94 /* CocoaPodsService.swift in Sources */,
+				5C5F4AB92063A8FC004B245C /* PodSource.swift in Sources */,
 				5C5F4AA12061EFDC004B245C /* UITableViewCell+Base.swift in Sources */,
+				601C3258206786CD0083C790 /* GithubList2ViewModel.swift in Sources */,
+				5C5F4ABB2063AA98004B245C /* PodSearch.swift in Sources */,
 				5C5F4A9320610D3F004B245C /* LibraryListViewModel.swift in Sources */,
 				5C4963352060FFC90059AC94 /* BaseViewModel.swift in Sources */,
 				5C5F4AA7206206C9004B245C /* Rx+ObjectMapper.swift in Sources */,
 				5C5F4A9F2061EDD9004B245C /* LibraryTableViewCell.swift in Sources */,
 				5C49634A206108940059AC94 /* GithubListViewController.swift in Sources */,
 				5C4963452061059F0059AC94 /* RepositoryService.swift in Sources */,
+				601C3254206645C90083C790 /* StringPickerTableViewCell.swift in Sources */,
 				5C49633B206103070059AC94 /* RepositoriesViewModel.swift in Sources */,
 				5C5F4AA920620A9A004B245C /* Rx+Request.swift in Sources */,
 				5C5F4AAB20620F74004B245C /* Pod.swift in Sources */,
 				5C5F4A9120610CF5004B245C /* LibraryListViewController.swift in Sources */,
 				5C496337206100140059AC94 /* BaseViewController.swift in Sources */,
 				5C5F4AAF20623B76004B245C /* GithubSearch.swift in Sources */,
+				601C324C2065E9920083C790 /* GithubSearchRepositoryOptionViewController.swift in Sources */,
 				5C5F4A952061108E004B245C /* Library.swift in Sources */,
 				5C5F4AA32062022F004B245C /* GithubTableViewCell.swift in Sources */,
+				601C32522066410C0083C790 /* GithubRepositorySearchOptionSectionData.swift in Sources */,
 				5C49635320610A070059AC94 /* CocoaPodsListViewModel.swift in Sources */,
 				5C49633E206103550059AC94 /* Repository.swift in Sources */,
+				601C324A2065E98B0083C790 /* GithubSearchRepositoryOptionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

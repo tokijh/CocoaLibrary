@@ -40,7 +40,7 @@ class LibraryListViewModel: BaseViewModel {
         self.pushVC = didCellSelected.map {
             switch $0.property {
             case .cocoaPods: return CocoaPodsListViewController.create(with: CocoaPodsListViewModel())
-            case .github: return GithubListViewController.create(with: GithubListViewModel(githubServiceOption: GithubServiceOption(language: .all, sort: .stars)))
+            case .github: return GithubListViewController.create(with: GithubList2ViewModel())
             }
         }.asDriver(onErrorJustReturn: nil)
     }

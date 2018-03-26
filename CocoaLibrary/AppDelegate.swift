@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var navigationViewController: UINavigationController = { [unowned self] in
         let navigationViewController = UINavigationController(rootViewController: self.rootViewController)
+        navigationViewController.navigationBar.prefersLargeTitles = true
         return navigationViewController
     }()
     

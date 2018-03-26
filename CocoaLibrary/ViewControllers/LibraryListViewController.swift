@@ -13,7 +13,7 @@ import SnapKit
 import RxDataSources
 
 class LibraryListViewModelController: UIViewController, BaseViewType {
-    
+
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(LibraryTableViewCell.self, forCellReuseIdentifier: LibraryTableViewCell.Identifier)

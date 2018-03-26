@@ -15,8 +15,10 @@ target 'CocoaLibrary' do
 
   # Network
   pod 'RxAlamofire',	'~> 4.0.0'
+  
   # UI
   pod 'SnapKit',		'~> 4.0'
+  pod 'TagListView',    '~> 1.0'
 
   # Model
   pod 'ObjectMapper',	'~>3.1'
