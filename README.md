@@ -1,11 +1,14 @@
 # CocoaLibrary
 Search and list ios libraries using MVVM + Rx
 
+## NOTI
+I used [CocoaPods listing API](https://cocoapods.org), but this server is down now...
+
 ## To users
 This is the sample to learn how to use the MVVM architecture with RxSwift. So it is not a completed code. </br>
-I don't know RxSwift, just i want to learn from you. *Please teach me Rx and coding skills!!* </br>
+I don't know RxSwift, just i want to learn from you. **Please teach me Rx and coding skills!!** </br>
 This project refered [iOS-Architecture-Sample](https://github.com/giftbott/iOS-Architecture-Sample) (Thanks [giftbot](https://github.com/giftbott)).
-If you have any advice about this code, please send to Pull Request. *WELCOME PR!!*
+If you have any advice about this code, please send to Pull Request. **WELCOME PR!!**
 
 ## Used Library
 ### Core
